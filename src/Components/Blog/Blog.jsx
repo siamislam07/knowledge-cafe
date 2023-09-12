@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
 const Blog = ({blog}) => {
-    console.log(blog);
+    const {title} = blog
     return (
         <div>
-            
+            <h2 className='text-4xl'> {title.length}</h2>
         </div>
     );
 };
