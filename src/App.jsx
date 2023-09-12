@@ -5,10 +5,11 @@ import BookMarks from './Components/BookMarks/BookMarks'
 import Header from './Components/Header/Header'
 
 function App() {
-  const [bookmars, setBookmarks] = useState([])
+  const [bookmarks, setBookmarks] = useState([])
 
   const handleAddToBookmark = blog =>{
-    console.log(blog);
+    const newBookmarks = [...bookmarks, blog]
+    setBookmarks(newBookmarks)
   }
 
   return (
@@ -18,7 +19,7 @@ function App() {
 
       <div className='md:flex max-w-7xl mx-auto' >
         <Blogs handleAddToBookmark={handleAddToBookmark}></Blogs>
-        <BookMarks></BookMarks>
+        <BookMarks bookmarks={bookmarks}></BookMarks>
       </div>
 
     </>
